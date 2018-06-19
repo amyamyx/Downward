@@ -6,11 +6,12 @@ html {
 body {
     height: 100%;
     overflow: auto;
+    background: #eeeeee;
     position: relative;
 }
 
 canvas {
-  background: peachpuff;
+  background: white;
   position: absolute;
   margin-left: 300px;
 }
