@@ -1,6 +1,6 @@
-# NF-Shaft-clone
+# Downward
 
-NF-Shaft-clone is a clone project of a platform game, NF-Shaft([NF-Shaft video demo](https://youtu.be/kR5l14rhfjo)). In the game, the player controls a figure with left and right keys and attempts to descend in order to escape from the ceiling spikes. There will be five different kinds of platforms for the player figure to stand on:
+**Downward** is a clone project of a platform game, NF-Shaft([NF-Shaft video demo](https://youtu.be/kR5l14rhfjo)). In the game, the player controls a figure with left and right keys and attempts to descend in order to escape from the ceiling spikes. There will be five different kinds of platforms for the player figure to stand on:
 
  * Solid platforms - Regular platforms. Player earns a point when stepping on them
  * Spiky platforms - Harmful platforms. Player loses a life when stepping on them
@@ -12,9 +12,14 @@ There are 2 ways that a player loses the game:
  * Fail to step on a platform before falling to the bottom of the window (frame)
  * Lose all 10 lives after touching the ceiling spikes or the spiky platforms
  
+### Functionality
 
+In Downward, users will be able to:
+* Use left and right key to control the player figure's movements
+* Press Space key to pause and continue a stated game
+* Press Space key to start a new game
 
-### Wireframe
+### Wireframes
 
 The app will consist of a single screen with a canvas, nav link to the repo of this project, my linkedIn link, and the instructions of how to play the game.
 
@@ -69,6 +74,6 @@ Lib files:
 * Add start, pause and continue keypress listeners
 * Polish the game view
 
-**BONUS**:
+**Bonus features**:
 
 * Add sound effects
