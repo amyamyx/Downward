@@ -1,4 +1,4 @@
-# Downward
+# Downward :running::arrow_lower_right:
 
 **Downward** is a clone project of a platform game, NF-Shaft([NF-Shaft video demo](https://youtu.be/kR5l14rhfjo)). In the game, the player controls a figure with left and right keys and attempts to descend in order to escape from the ceiling spikes. There will be five different kinds of platforms for the player figure to stand on:
 
