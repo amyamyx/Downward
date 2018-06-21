@@ -6,12 +6,13 @@ html {
 body {
     height: 100%;
     overflow: auto;
-    background: #eeeeee;
+    background: white;
     position: relative;
 }
 
 canvas {
   background: peachpuff;
+  background-image: url('./src/background.png');
   position: absolute;
   margin-left: 300px;
 }
