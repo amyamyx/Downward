@@ -1,29 +1,77 @@
 # Downward :running::arrow_lower_right:
 
-**Downward** is a clone project of a platform game, NF-Shaft([NF-Shaft video demo](https://youtu.be/kR5l14rhfjo)). In the game, the player controls a figure with left and right keys and attempts to descend in order to escape from the ceiling spikes. There will be five different kinds of platforms for the player figure to stand on:
+[Start playing **Downward**!](https://amyamyx.github.io/Downward/)
 
- * Solid platforms - Regular platforms. Player earns a point when stepping on them
- * Spiky platforms - Harmful platforms. Player loses a life when stepping on them
- * Conveyer belts - If player moves along the suggested direction of the conveyer belt, the moving speed doubles. Otherwise, the moving speed lowers down. Player earns a point when stepping on them
- * Springs - When stepping on string platforms, the player figure bounces up and down
- * Turnables - The figure player will fall down automatically after stepping on one. Player earns a point
+**Downward** is a Web brower game inspired by a retro platform game, NF-Shaft([NF-Shaft video demo](https://youtu.be/kR5l14rhfjo)). In the game, you will control a character and try you best to escape from the fierce ceiling spikes. There will be five different kinds of platforms for the character to stand on:
 
-There are 2 ways that a player loses the game:
- * Fail to step on a platform before falling to the bottom of the window (frame)
+ * Solid platforms - Regular platforms. The player earns one point when stepping on them.
+ * Spiky platforms - Harmful platforms. Player loses life counts when landed on one of these. Keep away unless neccessary!
+ * Conveyer belts - If you move along with the suggested direction of the conveyer belt, the moving speed doubles. If you move the opposite way, you'll stay on them longer. You earn one point when landing on them. Whoo whoo!
+ * Springs - When stepping on string platforms, the character bounces up and down.
+ * Turnables - The character will fall down automatically after stepping on one. Player earns a point.
+
+There are 2 ways to lose the game:
+ * Fail to step on a platform and fall out of the canvas (gameview)
  * Lose all 10 lives after touching the ceiling spikes or the spiky platforms
  
-### Functionality
+### Functionality & MVPs
 
 In Downward, users will be able to:
-* Use left and right key to control the player figure's movements
-* Press Space key to pause and continue a stated game
-* Press Space key to start a new game
+* Use left and right arrow keys to control the character's movements
+* Press space key to pause and continue a started game
+* Press space key to start a game
+* When the game is over, press space key to replay
+
+Key Features are: 
+* **Start and Pause the game both by pressing on space key**: In order to render the correct text when paused, instead of listening on the `keypress` event, I set up two separate listeners. By doing so, it also prevents the game from keeping rolling when we actually want it to pause.
+```JavaScript
+class Board {
+  constructor(...) {
+    //...
+    this.pause = false; //A boolean variable indicating whether the game is halted or not
+    this.listenKey();
+  }
+  
+  listenKey() {
+    const handleKeydown = (e) => {
+      if (e.key === " ") {
+        if (this.pause) {
+          //Do something
+        } else {
+          //...
+          this.pauseFn();
+          this.loadImage();
+        }
+      }
+    }
+
+    const handleKeyUp = (e) => {
+      if (e.key === " ") {
+        if (this.pause) {
+          this.pause = false;
+          this.continue();
+        } else {
+          this.pause = true;
+        }
+      }
+    }
+    
+    document.addEventListener("keydown", handleKeydown, false);
+    document.addEventListener("keyup", handleKeyUp, false);
+  }
+}
+```
+
+* After starting the game, the `Board` object will feed platforms from the bottom of the canvas. My first approach was to create another `setInterval` function besides the main `requestAnimationFrame` function. H
+
 
 ### Wireframes
 
 The app will consist of a single screen with a canvas, nav link to the repo of this project, my linkedIn link, and the instructions of how to play the game.
 
 ![](https://image.ibb.co/f5JA2y/wireframe_JS.png)
+
+### Sneak Peak
 
 ### Architecture and Technologies
 
