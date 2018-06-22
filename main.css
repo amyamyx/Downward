@@ -16,6 +16,7 @@ body {
   position: absolute;
   border: 2px solid darkslategray;
   border-radius: 5px;
+  margin-top: -10px;
 }
 #myCanvas2{
     /* background: peachpuff; */
@@ -47,12 +48,20 @@ body {
     margin-bottom: 0.1em;
 }
 
+.connected {
+    font-family: 'Comfortaa', cursive;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .how-to {
     font-family: 'Comfortaa', cursive;
 }
 
 .list {
     font-family: 'Quicksand', sans-serif;
+    margin-top: -10px;
+    line-height: 2em;
 }
 
 .contact-links {
@@ -100,6 +109,7 @@ body {
 
 a {
     text-decoration: none;
+    position: relative;
 }
 
 .list div {
@@ -131,4 +141,18 @@ a {
     width: 1.4em;
     vertical-align: -0.6em;
     background-position: -8.6em 0;
+}
+
+.spiky-img {
+    display: inline-block;
+    vertical-align:-0.5em;
+}
+
+.spiky-img img {
+    width: 100px;
+    height: auto;
+}
+
+li:nth-of-type(4) {
+    margin-top: -7px;
 }
