@@ -23,6 +23,8 @@ In Downward, users will be able to:
 Key Features are: 
 * **Start and Pause the game both by pressing the space key**: In order to render the correct text when paused, instead of listening on a single `keypress` event, I set up two separate listeners to detect `keydown` and `keyup` events. By doing so, it also prevents the game from keeping rolling when we actually want it to pause.
 ```JavaScript
+// ./lib/game.js
+
 class Game {
   constructor(...) {
     //...
@@ -62,6 +64,8 @@ class Game {
 
 * **Dynamically generate random platforms**: After starting the game, the `Board` object will feed platforms from the bottom of the canvas. My first approach was to create another `setInterval` function besides the main `requestAnimationFrame` function, which added the complexity when I want to pause the game. Instead, I created a helper function that detects when the platform at the top moves out of the canvas and it triggers the generation of a new random platform.
 ```JavaScript
+// ./lib/board.js
+
 class Board {
   constructor(...){
     this.platformHit = false; //default to false;
@@ -88,11 +92,13 @@ class Board {
 ```
 
 
-### Wireframes
+### Wireframes & Outcome
 
 The app will consist of a single screen with a canvas, nav link to the repo of this project, my linkedIn link, and the instructions of how to play the game.
 
 ![](https://image.ibb.co/f5JA2y/wireframe_JS.png)
+![](https://image.ibb.co/hAwAeo/screenshot.png)
+
 
 ### Architecture and Technologies
 
@@ -144,8 +150,9 @@ Lib files:
 **Future plans**:
 
 * Add sound effects with HTML5 `<audio>` tag
+* Use SQLite3 to store highest score records
 * Create other variation of platforms: 
   * `Belt` - Conveyor-belt-like platforms. If you move along with the suggested direction of the conveyer belt, the moving speed doubles. If you move the opposite way, you'll stay on them longer. You earn one point when landing on them. Whoo whoo!
   * `Spring` - When stepping on string platforms, the character bounces up and down.
   * `Turnable` - The character will fall down automatically after stepping on one. Player earns a point.
-* Use SQLite3 to store highest score records
+
