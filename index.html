@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Downward</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Montserrat|Quicksand|Ubuntu" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src="lib/bundle.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -18,6 +19,37 @@
   </script>
 </head>
 <body> 
-  <canvas id="myCanvas" height="1280" width="880"></canvas>
+  <div class="content">
+    <div class="canvas">
+      <canvas id="myCanvas2" height="80" width="880"></canvas>
+      <canvas id="myCanvas" height="1280" width="880"></canvas>
+    </div>
+
+    <div class="text">
+      <div>
+        <h2 class="welcome">Welcome to</h2>
+        <h1 class="title">Downward</h1>
+        <div class="contacts-links">
+          <a href="https://www.linkedin.com/in/tzuhui-tiffany-tang/" target="_blank">
+            <i class="contact-linkedin" id="djk"></i>
+            <!-- <img src="./src/linkedin.svg" alt=""> -->
+          </a>
+          <a href="https://github.com/amyamyx/Downward" target="_blank">
+            <span class="contact-github"></span>
+            <!-- <img src="./src/github2.svg" alt=""> -->
+          </a>
+          <a href="https://angel.co/ttang" target="_blank">
+            <i class="contact-angel"></i>
+            <!-- <img src="./src/angellist.svg" alt=""> -->
+          </a>
+        </div>
+      </div>
+      <h3 class="how-to">How to play:</h3>
+      <ul class="list">
+        <li> Press <div><i class="key-space"></i></div> to start and pause the game</li>
+        <li> Press <div><i class="key-left"></i></div> and <div><i class="key-right"></i></div> to control the running man</li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>

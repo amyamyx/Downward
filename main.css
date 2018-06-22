@@ -10,9 +10,136 @@ body {
     position: relative;
 }
 
-canvas {
+#myCanvas {
   background: peachpuff;
   background-image: url('./src/background.png');
   position: absolute;
-  margin-left: 150px;
+  border: 4px solid black;
+  border-radius: 5px;
+}
+#myCanvas2{
+    /* background: peachpuff; */
+    margin-left: 4px;
+}
+
+.content {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.text {
+    padding-left: 35px;
+    padding-top: 30px;
+}
+.welcome {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    margin-bottom: -50px;
+}
+
+.title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 4em;
+    color: #34675c;
+    text-shadow: 3px 3px 5px #b7b8b6;
+    margin-bottom: 0.1em;
+}
+
+.how-to {
+    font-family: 'Comfortaa', cursive;
+}
+
+.list {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.contact-links {
+    margin-top: -30px;
+    margin-left: 5px;
+}
+
+[class*="contact-"] {
+  display: inline-block;
+  background-image: url("src/icons.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+}
+
+
+.contact-linkedin {
+    background-position: 0 0;
+}
+
+#djk:hover {
+    background-position: -130.5px 0;
+    /* color: black !important; */
+}
+
+.contact-github {
+    background-position: -45px 0 ;
+}
+
+.contact-github:hover {
+    background-position: 83.6% 0;
+}
+
+.contact-angel {
+    background-position: -90px 0;
+}
+
+.contact-angel:hover {
+    background-position: -221px 0;
+}
+ 
+
+a {
+    text-decoration: none;
+}
+
+.list div {
+    display: inline;
+}
+[class*="key-"] {
+    display: inline-block;
+    background-image: url("src/keys.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 1.8em;
+    vertical-align: -0.5em;   
+}
+
+/* [class*="contact-"] {
+  display: inline-block;
+  background-image: url("src/icons.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+} */
+
+.key-space {
+    width: 7em;
+    vertical-align: -0.5em;
+    background-position: 0 0;
+}
+
+.key-left {
+    width: 1.4em;
+    vertical-align: -0.6em;
+    background-position: -7.1em 0;
+}
+
+.key-right {
+    width: 1.4em;
+    vertical-align: -0.6em;
+    background-position: -8.6em 0;
 }
