@@ -21,6 +21,7 @@ In Downward, users will be able to:
 * Press space key to pause and continue a started game
 * Press space key to start a game
 * When the game is over, press space key to replay
+* Increased difficulty after scoring certain points
 
 Key Features are: 
 * **Start and Pause the game both by pressing the space key**: In order to render the correct text when paused, instead of listening on a single `keypress` event, I set up two separate listeners to detect `keydown` and `keyup` events. By doing so, it also prevents the game from keeping rolling when we actually want it to pause.
