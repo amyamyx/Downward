@@ -94,9 +94,9 @@ class Board {
 
 ### Wireframes & Outcome
 
-The app will consist of a single screen with a canvas, nav link to the repo of this project, my linkedIn link, and the instructions of how to play the game.
+The app will consist of a single screen with a canvas, nav links to the repo of this project, my linkedIn account, my Angelist account, and the instructions of how to play the game.
 
-![](https://image.ibb.co/f5JA2y/wireframe_JS.png)
+![](https://image.ibb.co/hf6AvT/Web_1920_1.png)
 ![](https://image.ibb.co/hAwAeo/screenshot.png)
 
 
