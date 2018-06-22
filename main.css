@@ -11,10 +11,10 @@ body {
 }
 
 #myCanvas {
-  background: peachpuff;
+  /* background: peachpuff; */
   background-image: url('./src/background.png');
   position: absolute;
-  border: 4px solid black;
+  border: 2px solid darkslategray;
   border-radius: 5px;
 }
 #myCanvas2{
@@ -114,17 +114,6 @@ a {
     height: 1.8em;
     vertical-align: -0.5em;   
 }
-
-/* [class*="contact-"] {
-  display: inline-block;
-  background-image: url("src/icons.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  width: 45px;
-  height: 45px;
-  margin-right: 15px;
-} */
 
 .key-space {
     width: 7em;
