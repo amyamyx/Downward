@@ -4,11 +4,11 @@
 
 **Downward** is a Web brower game inspired by a retro platform game, NF-Shaft([NF-Shaft video demo](https://youtu.be/kR5l14rhfjo)). In the game, you will control a character and try you best to escape from the fierce ceiling spikes. There will be five different kinds of platforms for the character to stand on:
 
- * Solid platforms - Regular platforms. The player earns one point when stepping on them.
- * Spiky platforms - Harmful platforms. Player loses life counts when landed on one of these. Keep away unless neccessary!
- * Conveyer belts - If you move along with the suggested direction of the conveyer belt, the moving speed doubles. If you move the opposite way, you'll stay on them longer. You earn one point when landing on them. Whoo whoo!
- * Springs - When stepping on string platforms, the character bounces up and down.
- * Turnables - The character will fall down automatically after stepping on one. Player earns a point.
+ * `Solid` - Regular platforms. The player earns one point when stepping on them.
+ * `Spiky` - Harmful platforms. Player loses life counts when landed on one of these. Keep away unless neccessary!
+ * `Belt` - Conveyor-belt-like platforms. If you move along with the suggested direction of the conveyer belt, the moving speed doubles. If you move the opposite way, you'll stay on them longer. You earn one point when landing on them. Whoo whoo!
+ * `Spring` - When stepping on string platforms, the character bounces up and down.
+ * `Turnable` - The character will fall down automatically after stepping on one. Player earns a point.
 
 There are 2 ways to lose the game:
  * Fail to step on a platform and fall out of the canvas (gameview)
@@ -23,13 +23,13 @@ In Downward, users will be able to:
 * When the game is over, press space key to replay
 
 Key Features are: 
-* **Start and Pause the game both by pressing on space key**: In order to render the correct text when paused, instead of listening on the `keypress` event, I set up two separate listeners. By doing so, it also prevents the game from keeping rolling when we actually want it to pause.
+* **Start and Pause the game both by pressing the space key**: In order to render the correct text when paused, instead of listening on a single `keypress` event, I set up two separate listeners to detect `keydown` and `keyup` events. By doing so, it also prevents the game from keeping rolling when we actually want it to pause.
 ```JavaScript
-class Board {
+class Game {
   constructor(...) {
     //...
     this.pause = false; //A boolean variable indicating whether the game is halted or not
-    this.listenKey();
+    this.listenKey(); //Start listening upon initialization
   }
   
   listenKey() {
@@ -62,7 +62,31 @@ class Board {
 }
 ```
 
-* After starting the game, the `Board` object will feed platforms from the bottom of the canvas. My first approach was to create another `setInterval` function besides the main `requestAnimationFrame` function. H
+* **Dynamically generate random platforms**: After starting the game, the `Board` object will feed platforms from the bottom of the canvas. My first approach was to create another `setInterval` function besides the main `requestAnimationFrame` function, which added the complexity when I want to pause the game. Instead, I created a helper function that detects when the platform at the top moves out of the canvas and it triggers the generation of a new random platform.
+```JavaScript
+class Board {
+  constructor(...){
+    this.platformHit = false; //default to false;
+  }
+  //...
+  checkHit() {
+    if (SOME_CONDITIONS) {
+      this.platformHit = true;
+    }
+  }
+  
+  generatePlatform(){
+  }
+  
+  startFeedPlatforms(){
+    this.checkHit();
+    if (this.platformHit) {
+      this.platformHit = false; //Set back to detect the next platform
+      this.generatePlatform();
+    }
+  }
+}
+```
 
 
 ### Wireframes
@@ -71,14 +95,15 @@ The app will consist of a single screen with a canvas, nav link to the repo of t
 
 ![](https://image.ibb.co/f5JA2y/wireframe_JS.png)
 
-### Sneak Peak
+### Sneak Peek
 
 ### Architecture and Technologies
 
 This projects will be implemented with the following technologies:
-* Vanilla Javascript for the OOP structure and game logic
-* `HTML5 Canvas` for DOM manipulation and rendering
-* Webpack to bundle and serve up the scripts
+* `JavaScript` (ES6) for the OOP structure and game logic
+* `HTML5 Canvas` for DOM manipulation and rendering animation
+* `Webpack` to bundle and serve up the scripts
+* `CSS Sprites`
 
 Lib files: 
 * `entry.js` - the file where all files join
@@ -87,7 +112,7 @@ Lib files:
 * `player.js` - handle the drawing and behaviors of the player figure. (Able to move left or right when stepping on a platform & fall downward when not)
 * `platform.js` - a class to handle the drawing of the platforms where the player figure stands on.
 * `spiky.js` - extends from `Platform` class
-* `conveyor.js` - extends from `Platform` class
+* `belt.js` - extends from `Platform` class
 * `spring.js` - extends from `Platform` class
 * `turnable.js` - extends from `Platform` class
 
