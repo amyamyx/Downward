@@ -76,9 +76,10 @@ class Board {
   }
   
   generatePlatform(){
+   //code to generate a random platform
   }
   
-  startFeedPlatforms(){
+  startFeedPlatforms(){  //Will be invoked in the Game Object when the requestAnimationFrame is being called
     this.checkHit();
     if (this.platformHit) {
       this.platformHit = false; //Set back to detect the next platform
@@ -94,8 +95,6 @@ class Board {
 The app will consist of a single screen with a canvas, nav link to the repo of this project, my linkedIn link, and the instructions of how to play the game.
 
 ![](https://image.ibb.co/f5JA2y/wireframe_JS.png)
-
-### Sneak Peek
 
 ### Architecture and Technologies
 
