@@ -2,13 +2,10 @@
 
 [Start playing **Downward**!](https://amyamyx.github.io/Downward/)
 
-**Downward** is a Web brower game inspired by a retro platform game, NF-Shaft([NF-Shaft video demo](https://youtu.be/kR5l14rhfjo)). In the game, you will control a character and try you best to escape from the fierce ceiling spikes. There will be five different kinds of platforms for the character to stand on:
+**Downward** is a Web brower game inspired by a retro platform game, NF-Shaft([NF-Shaft video demo](https://youtu.be/kR5l14rhfjo)). In the game, you will control a character and try you best to escape from the fierce ceiling spikes. There will be two different kinds of platforms for the character to stand on:
 
  * `Solid` - Regular platforms. The player earns one point when stepping on them.
  * `Spiky` - Harmful platforms. Player loses life counts when landed on one of these. Keep away unless neccessary!
- * `Belt` - Conveyor-belt-like platforms. If you move along with the suggested direction of the conveyer belt, the moving speed doubles. If you move the opposite way, you'll stay on them longer. You earn one point when landing on them. Whoo whoo!
- * `Spring` - When stepping on string platforms, the character bounces up and down.
- * `Turnable` - The character will fall down automatically after stepping on one. Player earns a point.
 
 There are 2 ways to lose the game:
  * Fail to step on a platform and fall out of the canvas (gameview)
@@ -103,7 +100,8 @@ This projects will be implemented with the following technologies:
 * `JavaScript` (ES6) for the OOP structure and game logic
 * `HTML5 Canvas` for DOM manipulation and rendering animation
 * `Webpack` to bundle and serve up the scripts
-* `CSS Sprites`
+* `CSS Sprites`- multiple images in one single to reduce loading time
+* Github Pages - host the application live
 
 Lib files: 
 * `entry.js` - the file where all files join
@@ -112,9 +110,6 @@ Lib files:
 * `player.js` - handle the drawing and behaviors of the player figure. (Able to move left or right when stepping on a platform & fall downward when not)
 * `platform.js` - a class to handle the drawing of the platforms where the player figure stands on.
 * `spiky.js` - extends from `Platform` class
-* `belt.js` - extends from `Platform` class
-* `spring.js` - extends from `Platform` class
-* `turnable.js` - extends from `Platform` class
 
 ### Implementation Timeline
 
@@ -143,10 +138,14 @@ Lib files:
 
 **Day 4**:
 
-* Add springs and turnable platforms and have the player figure hehaves accordingly
 * Add start, pause and continue keypress listeners
 * Polish the game view
 
-**Bonus features**:
+**Future plans**:
 
-* Add sound effects
+* Add sound effects with HTML5 `<audio>` tag
+* Create other variation of platforms: 
+  * `Belt` - Conveyor-belt-like platforms. If you move along with the suggested direction of the conveyer belt, the moving speed doubles. If you move the opposite way, you'll stay on them longer. You earn one point when landing on them. Whoo whoo!
+  * `Spring` - When stepping on string platforms, the character bounces up and down.
+  * `Turnable` - The character will fall down automatically after stepping on one. Player earns a point.
+* Use SQLite3 to store highest score records
