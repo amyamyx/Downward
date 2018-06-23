@@ -62,7 +62,7 @@ class Game {
 }
 ```
 
-* **Dynamically generate random platforms**: After starting the game, the `Board` object will feed platforms from the bottom of the canvas. My first approach was to create another `setInterval` function besides the main `requestAnimationFrame` function, which added the complexity when I want to pause the game. Instead, I created a helper function that detects when the platform at the top moves out of the canvas and it triggers the generation of a new random platform.
+* **Dynamically generate random platforms**: After starting the game, the `Board` object will feed platforms from the bottom of the canvas. My original approach was to create another `setInterval` function besides the main `requestAnimationFrame` function. However, this increased the complexity when I want to pause the game. Instead, I created a helper function that detects when the top platform moves out of the canvas.Then it triggers the generation of a new random platform.
 ```JavaScript
 // ./lib/board.js
 
@@ -90,13 +90,14 @@ class Board {
   }
 }
 ```
+* **Display and update the life counts bar and scored points in real-time**: 
 
 
 ### Wireframes & Outcome
 
-The app will consist of a single screen with a canvas, nav link to the repo of this project, my linkedIn link, and the instructions of how to play the game.
+The app will consist of a single screen with a canvas, nav links to the repo of this project, my linkedIn account, my Angelist account, and the instructions of how to play the game.
 
-![](https://image.ibb.co/f5JA2y/wireframe_JS.png)
+![](https://image.ibb.co/hf6AvT/Web_1920_1.png)
 ![](https://image.ibb.co/hAwAeo/screenshot.png)
 
 
@@ -147,7 +148,7 @@ Lib files:
 * Add start, pause and continue keypress listeners
 * Polish the game view
 
-**Future plans**:
+**Future Adjustments**:
 
 * Add sound effects with HTML5 `<audio>` tag
 * Use SQLite3 to store highest score records
