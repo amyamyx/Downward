@@ -2,7 +2,7 @@
 
 [Start playing **Downward**!](https://amyamyx.github.io/Downward/)
 
-**Downward** is a Web brower game inspired by a retro platform game, NF-Shaft([NF-Shaft video demo](https://youtu.be/kR5l14rhfjo)). In the game, you will control a character and try you best to escape from the fierce ceiling spikes. There will be two different kinds of platforms for the character to stand on:
+**Downward** is a Web brower game inspired by a retro platform game, NF-Shaft([NF-Shaft video demo](https://youtu.be/kR5l14rhfjo)). In the game, you will control a character and try your best to escape from the fierce ceiling spikes. There will be two different kinds of platforms for the character to stand on:
 
  * `Solid` - Regular platforms. The player earns one point when stepping on them.
  * `Spiky` - Harmful platforms. Player loses life counts when landed on one of these. Keep away unless neccessary!
